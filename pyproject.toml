@@ -16,14 +16,11 @@ license = {text = "MIT"}
 name = "mindbox-test-lib"
 readme = "mindbox_shapes/README.md"
 requires-python = ">=3.12"
-version = "0.2.0"
+version = "0.2.1"
 
 [project.optional-dependencies]
 dev = ["isort", "flake8", "mypy"]
 test = ["pytest"]
-
-[tool.setuptools.packages.find]
-where = ["mindbox_shapes"]
 
 [tool.flake8]
 exclude = ["build", "dist", "venv", "__pycache__"]
