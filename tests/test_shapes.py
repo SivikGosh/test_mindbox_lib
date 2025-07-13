@@ -3,7 +3,7 @@ import random
 
 import pytest
 
-from shapes import Circle, Triangle
+from mindbox_test_lib import Circle, Triangle
 
 
 def test_circle_are_with_negative_radius():
