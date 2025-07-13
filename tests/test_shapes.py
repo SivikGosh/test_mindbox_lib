@@ -3,15 +3,15 @@ import random
 
 import pytest
 
-from mindbox_test_lib import Circle, Triangle
+from mindbox_shapes import Circle, Triangle
 
 
-def test_circle_are_with_negative_radius():
+def test_circle_are_with_negative_radius() -> None:
     with pytest.raises(ValueError):
         Circle(-1)
 
 
-def test_circle_area():
+def test_circle_area() -> None:
     for _ in range(10):
         radius = random.uniform(0.1, 100)
         circle = Circle(radius)
@@ -24,8 +24,8 @@ def test_circle_area():
     (1, 10, 20),
     (0, 1, 1),
     (-1, 2, 2),
-])
-def test_triangle_with_invalid_sides(a, b, c):
+])  # type: ignore[misc]
+def test_triangle_with_invalid_sides(a: float, b: float, c: float) -> None:
     with pytest.raises(ValueError):
         Triangle(a, b, c)
 
@@ -36,13 +36,18 @@ def test_triangle_with_invalid_sides(a, b, c):
     (7, 24, 25, True),
     (1, 1, 1, False),
     (2, 2, 3, False),
-])
-def test_is_right_triangle(a, b, c, expected):
+])  # type: ignore[misc]
+def test_is_right_triangle(
+    a: float,
+    b: float,
+    c: float,
+    expected: bool
+) -> None:
     tri = Triangle(a, b, c)
     assert tri.is_right() == expected
 
 
-def test_triangle_square():
+def test_triangle_square() -> None:
     for _ in range(10):
         a, b = random.uniform(0.1, 100), random.uniform(0.1, 100)
         lower, upper = abs(a - b) + 0.001, a + b - 0.001

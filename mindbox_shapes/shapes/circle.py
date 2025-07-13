@@ -1,6 +1,6 @@
 import math
 
-from .interfaces import Shape
+from mindbox_shapes.interfaces import Shape
 
 
 class Circle(Shape):
